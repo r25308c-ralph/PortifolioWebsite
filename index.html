@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Ralph Ngirazi | Web Developer & Portfolio</title>
-    <meta name="description" content="Portfolio of Ralph Ngirazi - Web Developer, System Designer, and Graphic Designer. Computer Science Student at Midlands State University.">
+    <meta name="description" content="Portfolio of Ralph Ngirazi - Web Developer, System Designer, and Graphic Designer. Computer Science Student at Midlands State University. Built with Flask, HTML, and CSS.">
 
     <!-- Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +19,22 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation (Pure HTML & CSS Driven) -->
     <header id="header">
         <a href="#about" class="logo" id="logo"><span>Ralph Ngirazi</span></a>
 
+        <!-- Pure CSS Mobile Navigation Toggle Checkbox -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="nav-toggle-label" id="menu-icon" title="Toggle navigation">
+            <i class="fa-solid fa-bars icon-bars"></i>
+            <i class="fa-solid fa-xmark icon-close"></i>
+        </label>
+
         <ul class="nav-links" id="nav-links">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#about" class="nav-link" onclick="closeNav()">About</a></li>
+            <li><a href="#experience" class="nav-link" onclick="closeNav()">Experience</a></li>
+            <li><a href="#projects" class="nav-link" onclick="closeNav()">Projects</a></li>
+            <li><a href="#contact" class="nav-link" onclick="closeNav()">Contact</a></li>
             <li class="mobile-only-link">
                 <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline mobile-github-btn">
                     <i class="fa-brands fa-github"></i> Visit Github
@@ -37,7 +44,6 @@
 
         <div class="header-actions">
             <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="visit-btn">Visit Github</a>
-            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0"></i>
         </div>
     </header>
 
@@ -195,11 +201,9 @@
                 </div>
 
                 <button type="submit" class="btn submit-btn" id="submit-btn">
-                    <span id="btn-text">Send Message</span>
-                    <i class="fa-solid fa-paper-plane" id="btn-icon"></i>
+                    <span>Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
                 </button>
-
-                <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
             </form>
 
             <div class="direct-contact-pill">
@@ -227,7 +231,19 @@
         <p class="copyright">Copyright &copy; 2024 Ralph Ngirazi. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- Minimal Helper to Auto-Close CSS Menu on Link Click -->
+    <script>
+        function closeNav() {
+            const toggle = document.getElementById('nav-toggle');
+            if (toggle) toggle.checked = false;
+        }
+        document.addEventListener('click', function(e) {
+            const header = document.getElementById('header');
+            const toggle = document.getElementById('nav-toggle');
+            if (header && toggle && !header.contains(e.target)) {
+                toggle.checked = false;
+            }
+        });
+    </script>
 </body>
 </html>

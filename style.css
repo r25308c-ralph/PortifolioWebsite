@@ -1,6 +1,6 @@
 /* ==========================================================================
    Ralph Ngirazi - Portfolio Stylesheet
-   Modern, Dark-Themed, Fully Responsive Across All Devices
+   Modern, Dark-Themed, Fully Responsive (Flask, HTML5, CSS3)
    ========================================================================== */
 
 /* --- CSS Variables --- */
@@ -41,7 +41,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* Offset for fixed floating header */
+    scroll-padding-top: 85px; /* Offset for fixed floating header */
     font-size: 16px;
     width: 100%;
     max-width: 100vw;
@@ -129,7 +129,7 @@ section {
     padding: 0 1rem;
 }
 
-/* --- Fixed Header & Navigation --- */
+/* --- Fixed Header & Navigation (Pure CSS Driven) --- */
 header {
     display: flex;
     position: fixed;
@@ -172,6 +172,30 @@ header {
 
 .logo:hover {
     transform: scale(1.04);
+}
+
+/* Checkbox Toggle for Pure CSS Mobile Nav */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--text-white);
+    padding: 0.4rem;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: var(--transition);
+}
+
+.nav-toggle-label .icon-close {
+    display: none;
+}
+
+.nav-toggle-label .icon-bars {
+    display: block;
 }
 
 .nav-links {
@@ -240,21 +264,6 @@ header {
     background: var(--gradient-reverse);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 0, 255, 0.4);
-}
-
-#menu-icon {
-    font-size: 1.4rem;
-    display: none;
-    cursor: pointer;
-    color: var(--text-white);
-    padding: 0.4rem;
-    transition: var(--transition);
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-#menu-icon:hover {
-    color: var(--accent-cyan);
 }
 
 /* --- Common Buttons --- */
@@ -598,7 +607,7 @@ header {
     margin-top: 0.8rem;
 }
 
-/* --- Contact Me Section --- */
+/* --- Contact Me Section (Flask / HTML Form) --- */
 .contact {
     background-color: var(--bg-main);
 }
@@ -610,7 +619,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
+}
+
+.flash-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .contact-form {
@@ -643,7 +659,7 @@ header {
     transition: var(--transition);
 }
 
-/* Note: 16px font-size prevents iOS Safari from automatically zooming the page */
+/* 16px font-size prevents iOS Safari from auto-zooming */
 .input-group input,
 .input-group textarea {
     width: 100%;
@@ -704,11 +720,9 @@ header {
     transform: none !important;
 }
 
-/* Form Status Message */
+/* Form Status Message & Flask Flash Styles */
 .form-status {
     width: 100%;
-    padding: 0;
-    margin: 0;
     border-radius: var(--radius-md);
     font-size: 0.95rem;
     text-align: center;
@@ -851,17 +865,17 @@ footer {
     }
 
     .header-actions .visit-btn {
-        display: none; /* Hide Github button from compact mobile bar */
+        display: none;
     }
 
-    #menu-icon {
-        display: block; /* Show hamburger menu toggle */
+    /* Show Pure CSS Nav Toggle Label (Hamburger Icon) */
+    .nav-toggle-label {
+        display: block;
     }
 
     /* 
-       CRITICAL MOBILE NAV BEHAVIOR:
-       Nav remains in its default state (collapsed / hidden) when opened on a phone.
-       It only opens when clicked, and auto-closes when any nav link is tapped to scroll down.
+       CRITICAL MOBILE NAV BEHAVIOR (HTML & CSS DRIVEN):
+       By default (unchecked), .nav-links is COLLAPSED and HIDDEN when opened on mobile.
     */
     .nav-links {
         position: absolute;
@@ -880,6 +894,7 @@ footer {
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 
         /* Default closed state */
+        display: none;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -887,11 +902,23 @@ footer {
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     }
 
-    .nav-links.active {
+    /* Pure CSS: When checkbox is checked by tapping hamburger label, dropdown opens */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: translateY(0);
+    }
+
+    /* Switch between hamburger bars and close X icon via CSS */
+    .nav-toggle:checked ~ .nav-toggle-label .icon-bars {
+        display: none;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label .icon-close {
+        display: block;
+        color: var(--accent-cyan);
     }
 
     .mobile-only-link {
