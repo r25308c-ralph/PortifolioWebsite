@@ -1,208 +1,233 @@
 <!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Potfolio Website</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Ralph Ngirazi | Web Developer & Portfolio</title>
+    <meta name="description" content="Portfolio of Ralph Ngirazi - Web Developer, System Designer, and Graphic Designer. Computer Science Student at Midlands State University.">
 
-        <!-- CSS File -->
-        <link rel="stylesheet" href="style.css">
-    
-        <!-- Font Awesome Link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-        <head>
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        </head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-        </head>
-    </head>
-    <body>
-    
-           <header> 
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <a href="#" class="logo"><span>Ralph Ngirazi</span></a>
+    <!-- Header Navigation -->
+    <header id="header">
+        <a href="#about" class="logo" id="logo"><span>Ralph Ngirazi</span></a>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="mobile-only-link">
+                <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline mobile-github-btn">
+                    <i class="fa-brands fa-github"></i> Visit Github
+                </a>
+            </li>
+        </ul>
+
+        <div class="header-actions">
+            <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="visit-btn">Visit Github</a>
+            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0"></i>
+        </div>
+    </header>
+
+    <!-- About / Hero Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="profile-wrapper">
+                <img src="profilepicture.jpg" alt="Ralph Ngirazi - Profile Picture" class="profile-img">
+            </div>
+
+            <div class="info-box">
+                <div class="text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Ralph Ngirazi</h1>
+                    <span>Web Developer</span>
+                    <p>Computer Science Student at Midlands State University</p>
+                </div>
+
+                <div class="btn-group">
+                    <a href="#contact" class="btn">Get in Touch</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:ralphngirazi@gmail.com" aria-label="Email Ralph"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">My professional journey and skills</p>
+
+        <div class="experience-info">
+            <div class="grid">
+                <div class="grid-card">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <span class="role-badge">Web Developer</span>
+                    <h3>4 months</h3>
+                    <h4>Frontend Development</h4>
+                    <p>I build responsive websites using HTML, CSS, and JavaScript. I love turning ideas into real, functional, interactive websites that users enjoy.</p>
+                </div>
+
+                <div class="grid-card">
+                    <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                    <span class="role-badge">Graphic Designer</span>
+                    <h3>6 months</h3>
+                    <h4>Graphic Design</h4>
+                    <p>I have experience working as a graphic designer helping individuals and businesses create compelling visual content. From logos to flyers, social media posts, and business cards, I create clean, modern, and professional designs tailored to client needs. Proficient in Adobe Photoshop, Illustrator, and Canva.</p>
+                </div>
+
+                <div class="grid-card">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <span class="role-badge">System Designer</span>
+                    <h3>4 months</h3>
+                    <h4>Full-Stack & Systems</h4>
+                    <p>I am an Undergraduate Computer Science student with a passion for system design and development, aspiring to be a Full-Stack Developer. I build web applications with Python, Flask, HTML, CSS, Bootstrap, and JavaScript.</p>
+                </div>
+
+                <div class="grid-card">
+                    <div class="card-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <span class="role-badge">Content Manager</span>
+                    <h3>2 months</h3>
+                    <h4>Content Management & SEO</h4>
+                    <p>As a Content Manager, I create and manage clear, engaging digital content. With my background in Python, Flask, HTML, CSS, Bootstrap, and JavaScript, I optimize content for search engines and user experience, helping drive traffic and engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">A selection of my recent works</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image-box">
+                    <img src="project1.jpg" alt="Courier Dispatch Management System">
+                </div>
+                <div class="project-content">
+                    <h3>Project X</h3>
+                    <p>Courier Dispatch Management System.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-sm">Live Demo</a>
+                        <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Github Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-box">
+                    <img src="project2.jpg" alt="Learning Management System">
+                </div>
+                <div class="project-content">
+                    <h3>Project Y</h3>
+                    <p>Learning Management System.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-sm">Live Demo</a>
+                        <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Github Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-box">
+                    <img src="project3.jpg" alt="Campus Lost and Found Management System">
+                </div>
+                <div class="project-content">
+                    <h3>Project Z</h3>
+                    <p>The Campus Lost and Found Management System.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-sm">Live Demo</a>
+                        <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Github Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Have a project, question, or opportunity? Send me a message directly!</p>
+
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/ralphngirazi@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Portfolio Contact Message from Ralph's Website">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="name" id="user-name" placeholder="Your Name" required autocomplete="name">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" id="user-email" placeholder="Your Email" required autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-tag"></i>
+                    <input type="text" name="subject" id="user-subject" placeholder="Subject" required>
+                </div>
+
+                <div class="input-group textarea-group">
+                    <i class="fa-solid fa-message"></i>
+                    <textarea name="message" id="user-message" rows="5" placeholder="Your Message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn submit-btn" id="submit-btn">
+                    <span id="btn-text">Send Message</span>
+                    <i class="fa-solid fa-paper-plane" id="btn-icon"></i>
+                </button>
+
+                <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+            </form>
+
+            <div class="direct-contact-pill">
+                <span>Or email me directly at:</span>
+                <a href="mailto:ralphngirazi@gmail.com"><i class="fa-solid fa-envelope"></i> ralphngirazi@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-
-        
-        <button class="visit-btn">Visit Github</button>
-                     
-        </header>
-
-    </div>
-</section>
-
-        <section id="about">
-            <div class="about-container">
-                <img src="profilepicture.jpg" alt="Profile Picture">
-                
-                
-                <div class="info-box">
-                    <div class="text">
-                        <h3>Hi, i'm</h3>
-                        <h1>Ralph Ngirazi</h1>
-                        <span>Web Developer </span>
-                        <p>Computer Science Student at Midlands State University</p>
-
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn">Download CV</button>
-                    <button class="btn">Download Contact</button>
-                </div>
-                        
-                <div class="socials">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
-                      
-            </div>
-        </section>    
-        <section id="experience" class="experience">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="experience-info">
-        <div class="grid">
-
-            <div class="grid-card">
-                <span>Web Developer</span>
-                <i class="fa-solid fa-code"></i>
-                <h3>4 months</h3>
-                <p>Fronted Development.</p>
-                <p>I build responsive websites using HTML, CSS, and JavaScript.</p>
-                <p>I love turning ideas into real, functional interactive websites that users enjoy.</p>
-            </div>
-
-            <div class="grid-card">
-                <span>Graphic Designer</span>
-                <i class="fa-solid fa-file-code"></i>
-                <h3>6 months</h3>
-                <p>Graphic Design.</p>
-                <p>I have experience working as a graphic designer helping individuals and 
-                    businesses create compelling visual content.From logos to flyers to social
-                    media posts to business cards, i create clean, modern, and professional designs 
-                    tailored to clients needs. I am proficient in Adobe Photoshop, illustrator, Canva.</p>
-                     <div class="media">
-                        <a class="d-flex align-self-bottom" href="#">
-                            <img src="" alt="">
-                        </a>
-                        <div class="media-body">
-                            
-        
-                        </div>
-                    </div></p>
-            </div>
-
-            <div class="grid-card">
-                <span>System Designer</span>
-                <i class="fa-solid fa-laptop"></i>
-                <h3>4 months</h3>
-                <p>I am an Undergraduate Computer Science student with a passion for 
-                    system design and development aspiring to be a Full-Stack Developer.
-                I build websites with Python, Flask, HTML, CSS, Bootstrap and JavaScript.</p>
-            </div>
-
-            <div class="grid-card">
-                <span>Content Manager</span>
-                <i class="fa-solid fa-list"></i>
-                <h3>2 months</h3>
-                <p>As a Content Manager, i create and manage clear, engaging digital content.
-                    With my background in Python, Flask, HTML, CSS, Bootstrap and JavaScript, 
-                    i not only write content but also understand how to present it effectively on 
-                    the web. I ensure that the content is optimized for search engines and user experience, helping to drive traffic and engagement.</p>
-
-
-                </p>
-            </div>
-
-        </div> <!-- Closes .grid -->
-    </div> <!-- Closes .experience-info -->
-</section>
-   
-<section id="projects" class="projects">
-    <h2 class="section-title">Recent Projects</h2>
-
-    <div class="projects-card">
-        <div class="card">
-            <img src="project1.jpg" alt="Project X">
-            <h3>Project X</h3>
-            <p>Courier Dispatch Management System.</p>
-        <div class="btn-group">
-            <div class="btn">Live Demo</div>
-            <div class="btn">Github Repo</div>
+        <div class="footer-socials">
+            <a href="https://github.com/r25308c-ralph" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:ralphngirazi@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-    </div>
 
-     <div class="projects-card">
-        <div class="card">
-            <img src="project2.jpg" alt="Project Y">
-            <h3>Project Y</h3>
-            <p>Learning Management System.</p>
-        <div class="btn-group">
-            <div class="btn">Live Demo</div>
-            <div class="btn">Github Repo</div>
-        </div>
-    </div>
+        <p class="copyright">Copyright &copy; 2024 Ralph Ngirazi. All Rights Reserved.</p>
+    </footer>
 
-     <div class="projects-card">
-        <div class="card">
-            <img src="project3.jpg" alt="Project Z">
-            <h3>Project Z</h3>
-            <p>The Campus Lost and Found Management System.</p>
-        <div class="btn-group">
-            <div class="btn">Live Demo</div>
-            <div class="btn">Github Repo</div>
-        </div>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <div class="input-box">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="input">
-            <input type="text" placeholder="ralphngirazi@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
-        </div>
-        <div class="btn">Submit</div>
-
-
-    </div>
-</section>
-
-<footer>
-
-    <ul>
-        <li>
-            <a href="#about">About</a>
-
-        </li>
-        <li>
-            <a href="#experience">Experience</a>
-        </li>
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-    </ul>
-
-    <p class="copyright">Copyright &copy; 2024 Ralph Ngirazi. All Rights Reserved.</p>
-</footer>
-
-
-
-  
-
-
-       
-        <script src="script.js"></script>
-    </body>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
 </html>
